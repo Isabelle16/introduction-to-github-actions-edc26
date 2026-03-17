@@ -23,9 +23,9 @@ jobs:
         steps:
             - run: echo "Hello, I'm macos-latest"
     slow_job:
-        timeout-minutes: 1
+        timeout-minutes: 5
         runs-on: ubuntu-latest
         steps:
             - run: echo "Hello, I'm a slow job"
-            - run: sleep 120
+            - run: sleep 30
         
