@@ -9,7 +9,7 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch:
+  workflow_dispatch: # allows to trigger the workflow manually from the GitHub UI
 
 
 # Group of jobs to run as part of the workflow
