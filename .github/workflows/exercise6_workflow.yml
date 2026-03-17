@@ -6,8 +6,9 @@ on: [push]
 
 # Group of jobs to run as part of the workflow
 jobs:
-    create-pdf-from-markdown:
+    container-job:
         runs-on: ubuntu-latest
+        container: python:3.14-slim
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
