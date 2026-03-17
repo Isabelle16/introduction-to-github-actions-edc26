@@ -1,0 +1,31 @@
+name: Workflow of exercise 3
+run-name: Third workflow # Optional
+
+# Events triggering the workflow
+on:
+    push:
+        branches: [ main ]
+
+env:
+    GREETING: "Hello world"
+# Group of jobs to run as part of the workflow
+jobs:
+    greet:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print greeting
+              run: echo "${GREETING}"
+            - name: Print greeting using env context
+              run: echo "${{ env.GREETING }}"
+            - name: Confirm greeting is correct
+              run: |
+                if [ "${GREETING}" != "Hello world" ]; then
+                    echo "Greeting is incorrect"
+                else
+                    echo "Greeting is correct"
+                fi
+    print-secret:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print secret
+              run: echo "${{ secrets.MY_SECRET }}"
